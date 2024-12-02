@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://btrnvonecg1i6"]
+
+[ext_resource type="Texture2D" uid="uid://ba7uxqqhnah7i" path="res://Assets/Enemies/Untitled-1.png" id="1_c33tb"]
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_q6nhg"]
+[ext_resource type="Texture2D" uid="uid://bwi3y33ivvntx" path="res://Assets/Enemies/Untitled-2.png" id="2_g06ed"]
+[ext_resource type="Texture2D" uid="uid://dncnipsmxi8ij" path="res://Assets/Enemies/Untitled-3.png" id="3_vj3lf"]
+[ext_resource type="Texture2D" uid="uid://cp75kro5hlq40" path="res://Assets/Enemies/Untitled-4.png" id="4_balbs"]
+[ext_resource type="Texture2D" uid="uid://c6lraa8ocvwoq" path="res://Assets/Enemies/Untitled-5.png" id="5_e7xoc"]
+[ext_resource type="Texture2D" uid="uid://b40fqucc4tjl1" path="res://Assets/Enemies/Untitled-6.png" id="6_1maib"]
+[ext_resource type="Texture2D" uid="uid://dliel7sew4ecg" path="res://Assets/Enemies/Untitled-7.png" id="7_r84fb"]
+[ext_resource type="Texture2D" uid="uid://d3l78rx3kmmkc" path="res://Assets/Enemies/Untitled-8.png" id="8_l2uqs"]
+[ext_resource type="Texture2D" uid="uid://cojggl7blpe0m" path="res://Assets/Enemies/Untitled-10.png" id="9_ed1cb"]
+[ext_resource type="Texture2D" uid="uid://cdef3akmt5rtc" path="res://Assets/Enemies/Untitled-11.png" id="10_n54d1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q5i1u"]
+radius = 43.0
+height = 122.0
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_q6nhg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1575, 0.0992366)
+texture = ExtResource("1_c33tb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.1575, 0.150685)
+texture = ExtResource("2_g06ed")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+scale = Vector2(0.1575, 0.150685)
+texture = ExtResource("3_vj3lf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+scale = Vector2(0.1575, 0.150685)
+texture = ExtResource("4_balbs")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+scale = Vector2(0.1575, 0.150685)
+texture = ExtResource("5_e7xoc")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+scale = Vector2(0.1575, 0.112923)
+texture = ExtResource("6_1maib")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+scale = Vector2(0.105747, 0.112923)
+texture = ExtResource("7_r84fb")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(-8.74483, 0)
+scale = Vector2(0.1275, 0.112923)
+texture = ExtResource("8_l2uqs")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.125342, 0.0942724)
+texture = ExtResource("9_ed1cb")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.152182, 0.136864)
+texture = ExtResource("10_n54d1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_q5i1u")

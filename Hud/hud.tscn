@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxmjt13pjlpwr"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_tuh76"]
+[ext_resource type="Script" path="res://Hud/hud.gd" id="1_ufsxw"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ufsxw")
+
+[node name="VirtualJoystick" parent="." instance=ExtResource("1_tuh76")]
+unique_name_in_owner = true
+visible = false

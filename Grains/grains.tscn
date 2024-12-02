@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqeuj3ghn215g"]
+
+[ext_resource type="Script" path="res://Grains/grains.gd" id="1_lvpfy"]
+[ext_resource type="Texture2D" uid="uid://bq16gdrn7mvnd" path="res://Assets/Grains/djungarian-hamster-eating-grains-see-my-other-works-portfolio-34976177.webp" id="1_st1oy"]
+[ext_resource type="Texture2D" uid="uid://b8tbtw16uehp2" path="res://Assets/Grains/corn.jpg" id="2_iko3l"]
+[ext_resource type="Texture2D" uid="uid://bwy8in1k5q1fj" path="res://Assets/Grains/oats.jpg" id="3_8h3rt"]
+[ext_resource type="Texture2D" uid="uid://cforalvna36ti" path="res://Assets/Grains/peas.jpg" id="4_05k1k"]
+[ext_resource type="Texture2D" uid="uid://cnkhrnm8uwhyt" path="res://Assets/Grains/sunflowers_seeds.jpg" id="5_w80tu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pshu0"]
+atlas = ExtResource("1_st1oy")
+region = Rect2(210.761, 251.028, 284.035, 190.115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oe6q"]
+size = Vector2(34, 34)
+
+[node name="Grains" type="Area2D"]
+z_index = 1
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_lvpfy")
+
+[node name="AllEat" type="Sprite2D" parent="."]
+scale = Vector2(0.0503703, 0.0503704)
+texture = SubResource("AtlasTexture_pshu0")
+
+[node name="AllEat2" type="Sprite2D" parent="."]
+scale = Vector2(0.119718, 0.178947)
+texture = SubResource("AtlasTexture_pshu0")
+
+[node name="Corn" type="Sprite2D" parent="."]
+scale = Vector2(0.0265625, 0.0398593)
+texture = ExtResource("2_iko3l")
+
+[node name="Oats" type="Sprite2D" parent="."]
+scale = Vector2(0.0148536, 0.019802)
+texture = ExtResource("3_8h3rt")
+
+[node name="Peas" type="Sprite2D" parent="."]
+scale = Vector2(0.0226667, 0.034)
+texture = ExtResource("4_05k1k")
+
+[node name="Sunflowers" type="Sprite2D" parent="."]
+scale = Vector2(0.0196759, 0.0293863)
+texture = ExtResource("5_w80tu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7oe6q")
