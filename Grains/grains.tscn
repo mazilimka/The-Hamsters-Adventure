@@ -21,26 +21,38 @@ collision_mask = 2
 script = ExtResource("1_lvpfy")
 
 [node name="AllEat" type="Sprite2D" parent="."]
-scale = Vector2(0.0503703, 0.0503704)
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.119718, 0.178947)
 texture = SubResource("AtlasTexture_pshu0")
 
 [node name="AllEat2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
 scale = Vector2(0.119718, 0.178947)
 texture = SubResource("AtlasTexture_pshu0")
 
 [node name="Corn" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
 scale = Vector2(0.0265625, 0.0398593)
 texture = ExtResource("2_iko3l")
 
 [node name="Oats" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
 scale = Vector2(0.0148536, 0.019802)
 texture = ExtResource("3_8h3rt")
 
 [node name="Peas" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
 scale = Vector2(0.0226667, 0.034)
 texture = ExtResource("4_05k1k")
 
 [node name="Sunflowers" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
 scale = Vector2(0.0196759, 0.0293863)
 texture = ExtResource("5_w80tu")
 

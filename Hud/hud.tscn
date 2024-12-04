@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxmjt13pjlpwr"]
+[gd_scene load_steps=4 format=3 uid="uid://bxmjt13pjlpwr"]
 
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_tuh76"]
-[ext_resource type="Script" path="res://Hud/hud.gd" id="1_ufsxw"]
+[ext_resource type="Script" path="res://Hud/Hud.gd" id="1_4o8bm"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_jl2e6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6tmer"]
+font_size = 60
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_ufsxw")
+script = ExtResource("1_4o8bm")
 
-[node name="VirtualJoystick" parent="." instance=ExtResource("1_tuh76")]
+[node name="Score" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 21.0
+offset_top = 1.0
+offset_right = 61.0
+offset_bottom = 84.0
+text = "0"
+label_settings = SubResource("LabelSettings_6tmer")
+
+[node name="VirtualJoystick" parent="." instance=ExtResource("2_jl2e6")]
 unique_name_in_owner = true
 visible = false

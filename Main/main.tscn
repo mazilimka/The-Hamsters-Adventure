@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjo4qlc16jjj"]
 
 [ext_resource type="PackedScene" uid="uid://bolx8pwqm6k3l" path="res://Player/player.tscn" id="1_bq1d2"]
-[ext_resource type="PackedScene" uid="uid://bqeuj3ghn215g" path="res://Grains/grains.tscn" id="2_ijooq"]
+[ext_resource type="Script" path="res://Main/main.gd" id="1_sgmbs"]
 [ext_resource type="PackedScene" uid="uid://cqhp5rt7jbl6o" path="res://Wall/wall.tscn" id="3_l8wya"]
 
 [sub_resource type="Gradient" id="Gradient_afo02"]
@@ -13,30 +13,49 @@ fill_from = Vector2(0.397436, 0.350427)
 fill_to = Vector2(0.692308, 0.67094)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_sgmbs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1189.0
-offset_bottom = 670.0
+offset_right = 1152.0
+offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_gw5ti")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_bq1d2")]
 position = Vector2(253, 193)
 
-[node name="Grains" parent="." instance=ExtResource("2_ijooq")]
-position = Vector2(502, 254)
+[node name="Walls" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Wall" parent="Node2D" instance=ExtResource("3_l8wya")]
+[node name="Wall" parent="Walls" instance=ExtResource("3_l8wya")]
 position = Vector2(-10, 324)
 scale = Vector2(1, 6.64)
+metadata/_edit_lock_ = true
 
-[node name="Wall2" parent="Node2D" instance=ExtResource("3_l8wya")]
+[node name="Wall2" parent="Walls" instance=ExtResource("3_l8wya")]
 position = Vector2(1162, 324)
 scale = Vector2(1, 6.64)
+metadata/_edit_lock_ = true
 
-[node name="Wall3" parent="Node2D" instance=ExtResource("3_l8wya")]
+[node name="Wall3" parent="Walls" instance=ExtResource("3_l8wya")]
 position = Vector2(576, 658)
 rotation = 1.5708
 scale = Vector2(1, 11.795)
+metadata/_edit_lock_ = true
+
+[node name="Wall4" parent="Walls" instance=ExtResource("3_l8wya")]
+position = Vector2(576, -10)
+rotation = 1.5708
+scale = Vector2(1, 11.795)
+metadata/_edit_lock_ = true
+
+[node name="TimerForGrains" type="Timer" parent="."]
+unique_name_in_owner = true
+process_callback = 0
+autostart = true
+
+[node name="TimerForEnemies" type="Timer" parent="."]
+unique_name_in_owner = true
+process_callback = 0
+autostart = true

@@ -7,9 +7,16 @@ var direction: Vector2
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down').normalized()
 	direction = quantize_direction(direction)
+	print(direction)
 	
 	velocity += direction * speed * delta
 	move_and_slide()
+	
+	## АААААА, ОПЯТЬ МАТЕМАТИКА, ЁП ТВОЮ МАААААААААТЬ:
+	if direction.x == 1:
+		$Sprite2D.flip_h = true
+	elif direction.x == -1:
+		$Sprite2D.flip_h = false
 	
 	if velocity.length() > speed:
 		velocity = velocity.normalized() * speed
