@@ -1,23 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxmjt13pjlpwr"]
+[gd_scene load_steps=7 format=3 uid="uid://bxmjt13pjlpwr"]
 
 [ext_resource type="Script" path="res://Hud/Hud.gd" id="1_4o8bm"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_jl2e6"]
+[ext_resource type="PackedScene" uid="uid://dcewd7e2qni6k" path="res://DeathWindow/death_window.tscn" id="3_tmvlg"]
+[ext_resource type="PackedScene" uid="uid://r7veriv3w7pe" path="res://PauseWindow/pause_window.tscn" id="4_3ri7s"]
+[ext_resource type="Texture2D" uid="uid://bck1wt2e125c3" path="res://Assets/Icon/Pause.png" id="5_6lln7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6tmer"]
-font_size = 60
+font_size = 42
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_4o8bm")
 
-[node name="Score" type="Label" parent="."]
+[node name="Fatness" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 21.0
-offset_top = 1.0
-offset_right = 61.0
-offset_bottom = 84.0
-text = "0"
+offset_left = 13.0
+offset_top = 31.0
+offset_right = 297.0
+offset_bottom = 99.0
+text = "Fatness: 0"
 label_settings = SubResource("LabelSettings_6tmer")
 
 [node name="VirtualJoystick" parent="." instance=ExtResource("2_jl2e6")]
 unique_name_in_owner = true
 visible = false
+
+[node name="DeathWindow" parent="." instance=ExtResource("3_tmvlg")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseWindow" parent="." instance=ExtResource("4_3ri7s")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Pause" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = 5.0
+offset_top = 109.0
+offset_right = 79.0
+offset_bottom = 183.0
+texture_normal = ExtResource("5_6lln7")
+ignore_texture_size = true
+stretch_mode = 0

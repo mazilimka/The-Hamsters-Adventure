@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjo4qlc16jjj"]
+[gd_scene load_steps=6 format=3 uid="uid://bjo4qlc16jjj"]
 
 [ext_resource type="PackedScene" uid="uid://bolx8pwqm6k3l" path="res://Player/player.tscn" id="1_bq1d2"]
 [ext_resource type="Script" path="res://Main/main.gd" id="1_sgmbs"]
-[ext_resource type="Texture2D" uid="uid://cneux00y2tcn3" path="res://Assets/road.jpg" id="2_kv7vm"]
 [ext_resource type="PackedScene" uid="uid://cqhp5rt7jbl6o" path="res://Wall/wall.tscn" id="3_l8wya"]
+
+[sub_resource type="Gradient" id="Gradient_afo02"]
+colors = PackedColorArray(0.699951, 0, 0.953125, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gw5ti"]
+gradient = SubResource("Gradient_afo02")
+fill_from = Vector2(0.397436, 0.350427)
+fill_to = Vector2(0.692308, 0.67094)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sgmbs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.337255)
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("2_kv7vm")
+texture = SubResource("GradientTexture2D_gw5ti")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_bq1d2")]
@@ -52,5 +58,4 @@ autostart = true
 [node name="TimerForEnemies" type="Timer" parent="."]
 unique_name_in_owner = true
 process_callback = 0
-wait_time = 0.7
 autostart = true

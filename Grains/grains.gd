@@ -6,11 +6,14 @@ func _ready() -> void:
 
 
 func set_grain():
-	get_children().pick_random().show()
+	$Sprites.get_children().pick_random().show()
 
 
 func player_entered(body: CharacterBody2D):
 	if body.is_in_group('Player'):
-		Global.Score += 1
-		Hud.update_score(Global.Score)
+		Global.player_increase += 1
+		body.increasing()
+		if Global.player_increase % 2 == 0:
+			Global.Fatness += 1
+		Hud.update_fatness(Global.Fatness)
 		queue_free()

@@ -7,15 +7,13 @@ var direction: Vector2
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down').normalized()
 	direction = quantize_direction(direction)
-	print(direction)
 	
 	velocity += direction * speed * delta
 	move_and_slide()
 	
-	## АААААА, ОПЯТЬ МАТЕМАТИКА, ЁП ТВОЮ МАААААААААТЬ:
-	if direction.x == 1:
+	if direction.x == -1:
 		$Sprite2D.flip_h = true
-	elif direction.x == -1:
+	elif direction.x == 1:
 		$Sprite2D.flip_h = false
 	
 	if velocity.length() > speed:
@@ -37,3 +35,15 @@ func quantize_direction(_dir: Vector2):
 	var quantized_angle = round(angle / step) * step
 	
 	return Vector2(cos(quantized_angle), sin(quantized_angle))
+
+
+func increasing():
+	if Global.player_increase % 2 == 0:
+		scale += Vector2(0.03, 0.03)
+
+
+func death():
+	Hud.set_state('death')
+	Global.Fatness = 0
+	Hud.update_fatness(Global.Fatness)
+	queue_free()
